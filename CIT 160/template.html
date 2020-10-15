@@ -3,11 +3,15 @@
 <head>
   <meta charset="utf-8">
   <title>Template</title>
-  <script></script>
+  <script>
+      function tempFunction() {
+          input = document.getElementById('userInput').value;
+      }
+  </script>
 </head>
 <body>
-  <button type="button" onclick=""></button>
-  <input type="text">
-  <div></div>
+  <button type="button" onclick="tempFunction()"></button>
+  <input type="text" id="userInput">
+  <div id="outputDiv"></div>
 </body>
 </html>
