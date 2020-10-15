@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+<meta charset="utf-8">
+<title>Calculate Miles per Gallon</title>
+
+<script>
+/* Input: beginning and ending mileage and gallons used - m1, m2, g 
+ * Processing: Find miles traveled for each gallon used
+ * Output: Miles per gallon
+ */
+function milesPerGallon() {
+   // Get the mileage and gallons from the user.
+    let m1 = parseFloat(document.getElementById('m1inputBox').value);
+    let m2 = parseFloat(document.getElementById('m2inputBox').value);
+    let g = parseFloat(document.getElementById('ginputBox').value);
+
+    // Compute the miles per gallon.
+    let mpg = (m2 - m1)/g
+    
+    // Display the Miles per Gallon amount to the user.
+    document.getElementById('mpgDiv').innerHTML = mpg;
+}
+</script>
+</head>
+
+<body>                                         
+<h1><u>Find Miles per Gallon</u></h1><br>
+Beginning Mileage: <input type="text" id="m1inputBox" size="4"><br>
+<br>
+Ending Mileage: <input type="text" id="m2inputBox" size="4"><br>
+<br>  
+Gallons Used: <input type="text" id="ginputBox" size="4"><br>
+<br>
+<button type="button" onclick="milesPerGallon()">Calculate</button><br>
+<br>
+Miles per Gallon: <div id="mpgDiv"></div>                
+</body>       
+</html>
