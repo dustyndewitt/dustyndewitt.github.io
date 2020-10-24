@@ -1,0 +1,49 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+  <meta charset="utf-8">
+  <title>What shoes should I wear today??</title>
+  <script>
+    /* Defining Table
+        * Input:      User inputs weather type
+        * Processing: System identifies which type of footware user needs based on several options (hot, rain, snow, or any other input)
+        * Output:     System prints the selected message describing what footware to use in footwareChoice div after button click
+    */
+    function footwear() 
+    {
+    // Input
+    let weather = document.getElementById("weatherInput").value;
+    
+    // Processing
+    switch(weather) {
+      // Output
+      case "hot":
+        document.getElementById("result").innerHTML = "Enjoy the day with some Sandals!! Either slip some on or strap up and go for a hike.";
+        break;
+      case "rain":
+        document.getElementById("result").innerHTML = "Awesome time to pull up your Galoshes and go puddle jumping!";
+        break;
+      case "snow":
+        document.getElementById("result").innerHTML = "Lace up your Boots and have fun building an igloo.";
+        break;
+      default:
+        document.getElementById("result").innerHTML = "Roll the dice and pick a random pair of shoes.";
+      }
+    }
+</script>
+</head>
+​
+<body>
+<header>
+    <h1>What shoes should I wear today??</h1>
+</header>
+
+        What's the weather outside?<br> <br>
+        <input type="text" id="weatherInput"> <br> <br>
+        <button type="button" onclick="footwear()">Surprise me!</button> <br><br>
+
+  <div class="output">
+      <div id="result"></div>
+  </div>
+</body>
+</html>
