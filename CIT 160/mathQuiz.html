@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<title>Math Quiz</title>
+		<script>
+			"use strict";
+​
+			/*Defining Table
+			 *Input: Number, Arithmetic Operator, Number, Answer
+			 *Processing: Solving the equation.
+			 *Output: "Correct! Good Job" or "Incorrect. Try Again."
+			 */
+​
+			 function solveEquation() {
+			 	let f = parseFloat(document.getElementById('firstNumber').value);
+			 	let o = document.getElementById('operator').value;
+			 	let s = parseFloat(document.getElementById('secondNumber').value);
+			 	let a = parseFloat(document.getElementById('answer').value);
+​
+			 	let message;
+			 	let correct;
+​
+			 	if (o == "+") {
+			 		correct = f + s;
+			 	}
+			 	else if (o == "-") {
+			 		correct = f - s;
+			 	}
+			 	else if (o == "*") {
+			 		correct = f * s;
+			 	}
+			 	else if (o == "/") {
+			 		correct = f / s;
+			 	}
+​
+			 	if (a == correct) {
+			 		message = "Correct! Good Job."
+			 	}
+			 	else {
+			 		message = "Incorrect. Try Again!"
+			 	}
+​
+			 	document.getElementById('output').innerHTML = message;
+			 }
+​
+		</script>
+	</head>
+ 
+	<body>
+		<h1>Math Quiz</h1>
+		First number:
+		<input type="text" id="firstNumber"> <br><br>
+		Operator:
+		<input type="text" id="operator"> <br><br>
+		Second number:
+		<input type="text" id="secondNumber"> <br><br>
+		Answer:
+		<input type="text" id="answer"> <br><br>
+		<button type="button" onclick="solveEquation()">Submit</button>
+		<div id="output"></div>
+	</body>
+​
+</html>
