@@ -1,64 +1,53 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<title>Math Quiz</title>
-		<script>
-			"use strict";
-​
-			/*Defining Table
-			 *Input: Number, Arithmetic Operator, Number, Answer
-			 *Processing: Solving the equation.
-			 *Output: "Correct! Good Job" or "Incorrect. Try Again."
-			 */
-​
-			 function solveEquation() {
-			 	let f = parseFloat(document.getElementById('firstNumber').value);
-			 	let o = document.getElementById('operator').value;
-			 	let s = parseFloat(document.getElementById('secondNumber').value);
-			 	let a = parseFloat(document.getElementById('answer').value);
-​
-			 	let message;
-			 	let correct;
-​
-			 	if (o == "+") {
-			 		correct = f + s;
-			 	}
-			 	else if (o == "-") {
-			 		correct = f - s;
-			 	}
-			 	else if (o == "*") {
-			 		correct = f * s;
-			 	}
-			 	else if (o == "/") {
-			 		correct = f / s;
-			 	}
-​
-			 	if (a == correct) {
-			 		message = "Correct! Good Job."
-			 	}
-			 	else {
-			 		message = "Incorrect. Try Again!"
-			 	}
-​
-			 	document.getElementById('output').innerHTML = message;
-			 }
-​
-		</script>
-	</head>
- 
-	<body>
-		<h1>Math Quiz</h1>
-		First number:
-		<input type="text" id="firstNumber"> <br><br>
-		Operator:
-		<input type="text" id="operator"> <br><br>
-		Second number:
-		<input type="text" id="secondNumber"> <br><br>
-		Answer:
-		<input type="text" id="answer"> <br><br>
-		<button type="button" onclick="solveEquation()">Submit</button>
-		<div id="output"></div>
-	</body>
-​
+  <head>
+    <meta charset="utf-8" />
+    <title>Math Quiz</title>
+    <script>
+      /* Defining Table
+        *Input: User inputs variables with specific operator and the answer they believe is correct.
+        *Processing: Calculates whether the answer is correct
+        *Output: Shows user whether they are correct or not
+      */
+        function mathematics() {
+          //Input:
+          let x = parseFloat(document.getElementById("xValue").value);
+          let op = document.getElementById("operator").value;
+          let y = parseFloat(document.getElementById("yValue").value);
+          let z = parseFloat(document.getElementById("solution").value);
+          //Processing:
+          let calculation;
+          let solution;
+          if (op == "+") {
+            calculation = x + y;
+          }
+          else if (op == "-") {
+            calculation = x - y;
+          }
+          else if (op == "*") {
+            calculation = x * y;
+          }
+          else if (op == "/") {
+            calculation = x / y;
+          }
+          if (calculation == z) {
+            solution = "Correct! Good job";
+          }
+          else {
+            solution = "Incorrect. Try again!";
+          }   
+          //Output:
+          document.getElementById("output").innerHTML = solution; 
+         }
+    </script>
+  </head>
+  <body>
+    <h1><u>Check Your Math!!</u></h1>
+    First Number: <input type="text" id="xValue"><br><br>
+    Mathematical Operator: <input type="text" id="operator"><br><br>
+    Second Number: <input type="text" id="yValue"><br><br>
+    Your Answer: <input type="text" id="solution"><br><br>
+    <button onclick="mathematics()">Run Math</button><br><br>
+    <div id="output"></div>
+  </body>
 </html>
