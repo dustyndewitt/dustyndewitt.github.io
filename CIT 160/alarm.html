@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>To sleep in or not sleep in - that is the question!</title>
+    <script>
+        "use strict";
+        /*
+            Input: date from computer's clock
+            Processing: determines day of the week, month and if it's a holiday
+            Output: tells user to sleep in or get up
+        */
+        function sleepin() {
+            //Input
+            var now = new Date();
+            var month = now.getMonth();
+            var dayOfMonth = now.getDate();
+            var dayOfWeek = now.getDay();
+            
+            //Processing
+            let sleepAlarm
+            if (dayOfWeek == 0 || dayOfWeek == 6 || (month == 0 && dayOfMonth == 1) || (month == 6 && dayOfMonth == 4) || (month == 11 && dayOfMonth == 25)) {
+                sleepAlarm = "Take your time - sleep in.";
+            }
+            else {
+                sleepAlarm = "NOPE!!! Get up magot!"
+            }
+            
+            //Output
+            document.getElementById("sleepinDiv").innerHTML = sleepAlarm;
+        }
+    </script>
+</head>
+​
+<body>                       
+    <h1>Do I get to sleep in today???</h1>
+    <button type="button" onclick="sleepin()">TELL ME!!</button>
+    <br><br>
+    <div id="sleepinDiv"></div>
+</body>
+</html>

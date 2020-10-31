@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Discount</title>
+    <script>
+        "use strict";
+        /*
+            Input: customer's subtotal
+            Processing: customer's subtotal and date are used to determine discount and tax
+            Output: customer's total amount due is shown
+        */
+        function salesTotal() {
+            //Input
+            var dayOfWeek = new Date().getDay();
+            let userSubtotal = parseFloat(document.getElementById("usersubtotal").value);
+            
+            //Processing
+            let userTotal;
+            if (userSubtotal > 50 && (dayOfWeek == 2 || dayOfWeek == 3)) {
+                userTotal = (userSubtotal * .9) * 1.06
+            }
+            else {
+                userTotal = userSubtotal * 1.06
+            }
+            
+            //Output
+            document.getElementById("totalDiv").innerHTML = userTotal.toFixed(2);
+        }
+    </script>
+</head>
+
+<body>                       
+    <h1>Discount + Sales Tax</h1>
+    Type in the customer subtotal: <input type="text" id="usersubtotal" size="6">
+    <br><br>
+    <button type="button" onclick="salesTotal()">Total</button>
+    <br><br>
+    <div id="totalDiv"></div>
+</body>
+</html>
