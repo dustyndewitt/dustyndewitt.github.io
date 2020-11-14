@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Times Table for 5</title>
+    <script>
+         /* Defining Table
+        * Input: No input
+        *Processing: Calculate multiples of 5 from 1 to 12
+        *Output: Each number from 1-12 multiplied by 5
+        */
+        function fiveTimes() {
+            let i = 0;
+            let output = "";
+            for (let e = 1; e <= 12; e++) {
+                i = 5 * e;
+                output += "5 * " + e + " = " + i + "<br>";
+            }
+            document.getElementById('outputDiv').innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+    <h1><u>Times Table</u></h1>
+    <p>Having a tough time remembering your times tables? Well, here's your 5's!</p>
+    <button type="button" onclick="fiveTimes()">Show me the money!!</button><br>
+    <br>
+    <div id="outputDiv"></div>
+</body>
+</html>

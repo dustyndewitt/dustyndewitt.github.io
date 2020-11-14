@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>Exponential Value</title>
+    <script>
+        /* Defining Table
+        * Input: No input
+        *Processing: Calculate the exponential value of 2 raised from 0 to 31
+        *Output: 2 raised to 0-31
+        */
+        function powers() {
+            let i = 0;
+            let output = "";
+            for (let e = 0; e <= 31; e++) {
+                i = Math.pow(2,e);
+                output += "2 ^ " + e + " = " + i + '<br>';
+            }
+            document.getElementById('outputDiv').innerHTML = output;
+        }
+    </script>
+</head>
+<body>
+  <h1><u>Exponential Values</u></h1>
+  <p>Do you know what an exponential value is? See if you can figure it out from this list of 2's...</p>
+  <button type="button" onclick="powers()">2 raised to the power of...</button>
+  <div id="outputDiv"></div>
+</body>
+</html>
