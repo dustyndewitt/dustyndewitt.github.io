@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title>What's the REAL tempurature??</title>
+    <script>
+        "use strict";
+        /*
+            Input: the user's inputs current temperature and windspeed
+            Processing: the windchill is calculated from the user's inputs
+            Output: the real temperature
+        */
+        function doInputOutput() {
+            let temp = parseFloat(document.getElementById("Temperature").value);
+            let windSpeed = parseFloat(document.getElementById("WindSpeed").value);
+            let realTemp = windChill(temp, windSpeed);
+            document.getElementById("windDiv").innerHTML = realTemp;
+        }
+        function windChill(tempF, speed) {
+           let realTemp = 35.74 + 0.6215 * tempF - 35.75 * Math.pow(speed, 0.16) + 0.4275 * tempF * Math.pow(speed, 0.16);
+           return realTemp;
+        }
+    </script>
+</head>
+<body>                       
+  <h1><u>How cold is it really??</u></h1>
+    Temperature: <input type="text" id="Temperature" size="5">
+    <br><br>
+    Wind Speed: <input type="text" id="WindSpeed" size="5">
+    <br><br>
+    <button type="button" onclick="doInputOutput()">Chill Factor</button>
+    <br><br>
+    <div id="windDiv"></div>
+</body>
+</html>
